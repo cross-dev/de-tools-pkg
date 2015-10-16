@@ -1,6 +1,6 @@
 # Maintainer: Roman Saveljev <roman.saveljev@haltian.com>
 pkgname=de-tools
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 pkgdesc="Tools package for both development and integration environments"
 arch=('any')
@@ -10,7 +10,7 @@ depends=('perl')
 checkdepends=('bats-git')
 source=("https://github.com/cross-dev/${pkgname}/archive/${pkgver}.tar.gz"
        )
-md5sums=('9d93fd05005715ba5dd9ecfbee41ad3b')
+md5sums=('d12a9a2212e8e3aa030fcf9297e2e45c')
 
 build() {
 	cd "$pkgname-$pkgver"
@@ -24,5 +24,5 @@ check() {
 
 package() {
 	cd "$pkgname-$pkgver"
-	make DESTDIR="$pkgdir" install
+	make DESTDIR="$pkgdir/" install
 }
